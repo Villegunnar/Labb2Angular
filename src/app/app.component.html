@@ -1,64 +1,83 @@
-<div class="container">
-
-    <h1>Angular + Net6 API (SUT21)</h1>
-
-    <div class="cards-container">
-        <div class="cards-form">
-            <div class="form-group">
-                <label for="">Card Holder Name</label>
-                <input type="text" name="cardName">
-            </div>
-
-            <div class="form-group">
-                <label for="">Card Number</label>
-                <input type="text" name="carNumber">
-            </div>
-
-            <div class="form-group form-group-inline">
-
-                <div class="form-group">
-                    <label for="">CVC</label>
-                    <input type="text" name="cvc">
-                </div>
-
-                <div class="form-group">
-                    <label for="">Expiry Month</label>
-                    <input type="text" name="expiryMonth">
-                </div>
-
-                <div class="form-group">
-                    <label for="">Expiry Year</label>
-                    <input type="text" name="expiryYear">
-                </div>
-
-            </div>
-            <div class="form-group">
-                <button>Save</button>
-            </div>
+<div>
+    <h1>Rubrik</h1>
 
 
+    <div class="container-left">
+    
 
+
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="">Card Holder Name</label>
+            <input type="text" name="cardName" [(ngModel)]="employee.firstName">
+            <input type="text" name="cardName" [(ngModel)]="employee.lastName">
         </div>
 
-        <div class="cards-grid">
-            <div class="card-row">
-                <div class="card-row-details" *ngFor="let employee of employees">
-                    <span>{{employee.FirstName}}</span>
-                    <span>{{employee.LastName}}</span>
-                </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" name="cardNumber" [(ngModel)]="employee.email">
+        </div>
 
+        <div class="form-group form-group-inline">
 
-
-
-
-                <div class="card-row-action">
-                    <a><i class="fa-solid fa-trash-can"></i></a>
-
-                </div>
-
+            <div class="form-group">
+                <label for="">PhoneNumber</label>
+                <input type="text" name="cvc" [(ngModel)]="employee.phoneNumber">
             </div>
 
+            <div class="form-group">
+                <label for="">Gender</label>
+                <input type="text" name="expiryMonth" [(ngModel)]="employee.gender">
+            </div>
 
+            <div class="form-group">
+                <label for="">Department Id</label>
+                <input type="text" name="expiryYear" [(ngModel)]="employee.departmentId">
+            </div>
+
+            <div class="form-group">
+                <label for="">Adress</label>
+                <input type="text" name="expiryYear" [(ngModel)]="employee.adress">
+            </div>
+
+            <div class="form-group">
+                <label for="">Salary</label>
+                <input type="text" name="expiryYear" [(ngModel)]="employee.salary">
+            </div>
+
+        
+        <div class="form-group">
+            <button>Save</button>
+        </div>
+    
+        </div>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+    <div class="container-right">
+        <div class="emplyee-grid">
+            <div (click)="populateForm(employee)" class="employee-row" *ngFor="let employee of employees">
+                <div class="employee-row-details">
+                    <h3>Employee Information:</h3>
+                    <span>{{employee.firstName}}</span><br>
+                    <span>{{employee.lastName}}</span><br>
+                    <span>{{employee.email}}</span><br>
+                    <span>{{employee.phoneNumber}}</span><br>
+                    <span>{{employee.gender}}</span><br>
+                    <span>{{employee.departmentId}}</span><br>
+                    <span>{{employee.adress}}</span><br>
+                    <span>{{employee.salary}}</span><br>
+                </div>
+                <a (click)="onDeleteEmployee(employee.id)"><i class="fa-solid fa-trash-can"></i></a>
+            </div>
         </div>
     </div>
+
 </div>

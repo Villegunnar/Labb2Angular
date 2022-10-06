@@ -1,13 +1,17 @@
+import { Department } from "./department.model";
+
+
 export interface Employee{
     id:string;
-    FirstName:string;
-    LastName:string;
-    Email:string;
-    PhoneNumber:string;
-    Gender:string;
+    firstName?:string;
+    lastName?:string;
+    email?:string;
+    phoneNumber?:string;
+    gender?:string;
 
-    DepartmentId:string;
-    Adress:string;
-    Salary:string;
+    departmentId?:string;
+    department?:Department;
+    adress?:string;
+    salary?:string;
 
 }

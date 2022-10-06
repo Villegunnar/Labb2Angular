@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Employee } from "../Models/employee.model";
-import {Injectable} from '@angular/core'
-import {Observable} from 'rxjs'
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
     providedIn : 'root'
-});
+})
+
 export class EmployeeService{
     baseUrl='https://localhost:7158/api/employee'
 
@@ -26,7 +27,7 @@ getAllEmployees():Observable<Employee[]>
 
 addEmployee(employee:Employee):Observable<Employee>
 {
-    employee.id = '00000000-0000-0000-0000-000000000000';
+    employee.id = '0';
 
     return this.http.post<Employee>(this.baseUrl,employee)
 }
