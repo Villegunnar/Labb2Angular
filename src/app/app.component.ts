@@ -20,7 +20,7 @@ export class AppComponent {
 
   employees: Employee[] = [];
   employee: Employee = {
-    id: '',
+    employeeId: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -40,9 +40,9 @@ export class AppComponent {
     this.getAllEmployees();
   }
 
-  ngOninit(): void {
-    this.getAllDepartments();
-  }
+  // ngOninit(): void {
+  //   this.getAllDepartments();
+  // }
 
   // Get All Employees
   getAllEmployees() {
@@ -61,11 +61,14 @@ export class AppComponent {
 
   // Add Employee
   onSubmit() {
-    if (this.employee.id == '') {
-      this.employeeService.addEmployee(this.employee).subscribe((response) => {
+    if (this.employee.employeeId == '') {
+      this.employeeService.addEmployee(this.employee)
+      .subscribe
+      (
+        (response) => {
         this.getAllEmployees();
         this.employee = {
-          id:'',
+          employeeId:'',
           firstName: '',
           lastName: '',
           email: '',
@@ -78,12 +81,12 @@ export class AppComponent {
         };
       });
     } else {
-      this.updateEmplyee(this.employee);
+      this.updateEmployee(this.employee);
     }
   }
 
   //update Employee
-  updateEmplyee(employee: Employee) {
+  updateEmployee(employee: Employee) {
     this.employeeService.updateEmployee(employee).subscribe((response) => {
       this.getAllEmployees();
     });
@@ -98,7 +101,7 @@ export class AppComponent {
 
   //Delete
   onDeleteEmployee(id: string) {
-    this.employeeService.deleteEmployee(id).subscribe((response) => {
+    this.employeeService.deleteEmployee(id).subscribe( response => {
       this.getAllEmployees();
     });
   }

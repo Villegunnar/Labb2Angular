@@ -27,7 +27,7 @@ getAllEmployees():Observable<Employee[]>
 
 addEmployee(employee:Employee):Observable<Employee>
 {
-    employee.id = '0';
+    employee.employeeId = '0';
 
     return this.http.post<Employee>(this.baseUrl,employee)
 }
@@ -43,7 +43,7 @@ deleteEmployee(id:string):Observable<Employee>
 //Update Employee
 updateEmployee(employee:Employee):Observable<Employee>
 {
-    return this.http.put<Employee>(this.baseUrl + '/' + employee.id,employee)
+    return this.http.put<Employee>(this.baseUrl + '/' + employee.employeeId,employee)
 }
 
 
