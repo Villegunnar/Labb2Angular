@@ -4,6 +4,8 @@ import { EmployeeService } from './service/employee.service';
 import { Department } from './Models/department.model';
 import { DepartmentService } from './service/department.service';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,10 +33,15 @@ export class AppComponent {
     salary: '',
   };
 
-  constructor(
-    private employeeService: EmployeeService,
-    private departmentService: DepartmentService
-  ) {}
+
+
+
+
+
+  constructor(private employeeService: EmployeeService,private departmentService: DepartmentService) {}
+
+
+
 
   ngOnInit(): void {
     this.getAllEmployees();
@@ -118,4 +125,7 @@ export class AppComponent {
   populateForm(employee: Employee) {
     this.employee = employee;
   }
+
+
+
 }

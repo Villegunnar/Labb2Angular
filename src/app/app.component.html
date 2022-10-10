@@ -1,4 +1,3 @@
-
 <div>
     <h1 class="title">Employee Registration</h1>
 
@@ -6,13 +5,13 @@
         <div class="left-half">
 
             <div class="fixed_header">
-            <thead>
-                <tr>
-                    <th>Employees Form</th>
+                <thead>
+                    <tr>
+                        <th>Employees Form</th>
 
-                </tr>
-            </thead>
-        </div>
+                    </tr>
+                </thead>
+            </div>
 
             <form #form="ngForm" (ngSubmit)="onSubmit()">
 
@@ -57,7 +56,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="save-button">Save</button>
+                    <button  class="save-button">Save</button>
                 </div>
             </form>
         </div>
@@ -66,38 +65,48 @@
 
 
 
-            <table class="fixed_header" >
+            <table class="fixed_header">
 
-                        
+
                 <thead>
                     <tr>
                         <th>Employees List</th>
 
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <tr *ngFor="let employee of employees">
-                        
-                        <td>
-                            <div (click)="populateForm(employee)"  class="employee-row-details">
-                            <span>{{ employee.firstName + " " }}</span>
-                            <span>{{ employee.lastName }}</span><br />
-                            <span>{{ employee.email }}</span><br />
-                            <span>{{ employee.phoneNumber }}</span><br />
-                            <span>{{ employee.gender }}</span><br />
-                            <span>{{ employee.departmentId }}</span><br />
-                            <span>{{ employee.adress }}</span><br />
-                            <span>{{ employee.salary + " kr" }}</span><br />
 
-                            <div class="employee-row-action">
-                                <a (click)="onDeleteEmployee(employee.employeeId)"><i
-                                        class="fa-sharp fa-solid fa-trash-can"></i></a>
 
-                            </div>
+
+
+
+                        <div (click)="populateForm(employee)" class="employee-row-details">
+                            <td>
+
+
+                                <span>Name: {{ employee.firstName + " " }}</span>
+                                <span>{{ employee.lastName }}</span><br />
+                                <span>Email: {{ employee.email }}</span><br />
+                                <span>Phonenumber: {{ employee.phoneNumber }}</span><br />
+                                <span>Gender: {{ employee.gender }}</span><br />
+                                <span>Department Number: {{ employee.departmentId }}</span><br />
+                                <span>Adress: {{ employee.adress }}</span><br />
+                                <span>Salary: {{ employee.salary + " kr" }}</span><br />
+
+                            </td>
 
                         </div>
-                        </td>
+                        <button class="employee-row-action">
+                            <a (click)="onDeleteEmployee(employee.employeeId)" ><i
+                                    class="fa-sharp fa-solid fa-trash-can"></i></a>
+
+                        </button>
+                        <div class="space"></div>
+
                     </tr>
+
+
                 </tbody>
             </table>
 

@@ -1,7 +1,8 @@
 
 .title{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 60px;
+    font-size: 50px
     
 }
 
@@ -16,9 +17,7 @@
     margin: 0 auto;
 }
 
-.h1 {
-    text-align: center;
-}
+
 
 .container {
     display: flex;
@@ -50,7 +49,7 @@
 
 
 .form-group input {
-    width: 81%;
+    width: 88%;
     padding: 0.5em 0.3em;
     margin-bottom: 0.5em;
     font-size: 1.2em;
@@ -74,13 +73,19 @@
 }
 
 .employee-row {
-    width: 100px;
+    width: 200px;
     display: flex;
     margin-bottom: 0.2em;
 }
 
 .employee-row-details {
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%); */
+
+/* Created with https://www.css-gradient.com */
+background: #15AAA8;
+background: -webkit-linear-gradient(top left, #15AAA8, #3E67E6);
+background: -moz-linear-gradient(top left, #15AAA8, #3E67E6);
+background: linear-gradient(to bottom right, #15AAA8, #3E67E6);
     border-radius: 15px;
     flex-grow: 1;
     padding: 0.4em 1em;
@@ -125,7 +130,7 @@
 
 
 .fixed_header {
-    width: 400px;
+    width: 486px;
     table-layout: fixed;
     border-collapse: collapse;
 
@@ -136,7 +141,7 @@
     display: block;
     width: 100%;
     overflow: auto;
-    height: 800px;
+    height: 703px;
 }
 
 .fixed_header thead tr {
@@ -157,10 +162,15 @@
 .fixed_header td {
     padding: 5px;
     text-align: left;
-    width: 388px;
+    width: 430px;
 }
 
 span{
     font-size: 15px;
-    font-weight:normal;
+    font-weight:bold;
+
+}
+
+.space{
+    padding:5px;
 }
